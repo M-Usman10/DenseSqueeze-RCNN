@@ -287,12 +287,12 @@ def main(args):
 
     # video =IUVs_List[0]
     #store in the directory
-    result_name=os.path.basename(args.im_or_folder).split('.')[0]+'_IUV.mp4'
-    out_name = os.path.join(
-        args.output_dir, result_name)
-    print ("saving video at {} ".format(out_name))
+    # result_name=os.path.basename(args.im_or_folder).split('.')[0]+'_IUV.mp4'
+    # out_name = os.path.join(
+    #     args.output_dir, result_name)
+    # print ("saving video at {} "?.format(out_name))
     # cv2.imwrite(out_name, video)
-    save_video(IUVs_List,out_name)
+    # save_video(IUVs_List,out_name)
 
 
 if __name__ == '__main__':
