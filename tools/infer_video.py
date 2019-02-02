@@ -222,10 +222,13 @@ def main(args):
     images_read=False
     is_dir=os.path.isdir(args.im_or_folder)
 
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir)
+
 
     result_dir = os.path.basename(args.im_or_folder).split(".")[0]
+    result_dir=os.path.join(args.output_dir,result_dir)
+    print ("Result directory is {} ".format(result_dir))
+    if not os.path.exists(result_dir):
+        os.makedirs(result_dir)
 
     if is_dir:
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
@@ -275,10 +278,11 @@ def main(args):
         )
 
         # result_name = os.path.basename(args.im_or_folder).split('.')[0] + '{}_IUV.jpg'.format(i)
-        result_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
+        out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
 
-        out_name = os.path.join(
-            args.output_dir, result_name)
+        # out_name = os.path.join(
+        #     args.output_dir, result_name)
+        print ("saving image at {}".format(out_name))
         # IUVs_List.append(IUVs)
 
         cv2.imwrite(out_name, IUVs)
