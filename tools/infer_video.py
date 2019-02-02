@@ -222,8 +222,14 @@ def main(args):
     images_read=False
     is_dir=os.path.isdir(args.im_or_folder)
 
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+
+    result_dir = os.path.basename(args.im_or_folder).split(".")[0]
+
     if is_dir:
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
+
     else:
         cap = Cap(args.im_or_folder, args.step_size)
         with cap as cap:
@@ -267,7 +273,15 @@ def main(args):
             thresh=0.7,
             kp_thresh=2
         )
-        IUVs_List.append(IUVs)
+
+        # result_name = os.path.basename(args.im_or_folder).split('.')[0] + '{}_IUV.jpg'.format(i)
+        result_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
+
+        out_name = os.path.join(
+            args.output_dir, result_name)
+        # IUVs_List.append(IUVs)
+
+        cv2.imwrite(out_name, IUVS)
 
     #make a video of iuvs and store it
 
