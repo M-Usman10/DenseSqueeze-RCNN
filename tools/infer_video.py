@@ -281,7 +281,7 @@ def main(args):
             args.output_dir, result_name)
         # IUVs_List.append(IUVs)
 
-        cv2.imwrite(out_name, IUVS)
+        cv2.imwrite(out_name, IUVs)
 
     #make a video of iuvs and store it
 
