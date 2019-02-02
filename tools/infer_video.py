@@ -114,6 +114,14 @@ def form_IUV_mask(
     All_Coords = All_Coords.astype(np.uint8)
     return All_Coords
 
+def save_video(images,path,fps=30):
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    height,width=images[0].shape[:2]
+    out = cv2.VideoWriter(path, fourcc, fps, (width, height))
+    for image in images:
+        out.write(image)
+    out.release()
+    cv2.destroyAllWindows()
 
 class Cap:
     def __init__(self, path, step_size=1):
@@ -263,13 +271,14 @@ def main(args):
 
     #make a video of iuvs and store it
 
-    video =IUVs_List[0]
+    # video =IUVs_List[0]
     #store in the directory
+    result_name=os.path.basename(args.im_or_folder).split('.')[0]+'_IUV.mp4'
     out_name = os.path.join(
-        args.output_dir, '{result_IUV.jpg}')
+        args.output_dir, result_name)
     print ("saving video at {} ".format(out_name))
-    cv2.imwrite(out_name, video)
-
+    # cv2.imwrite(out_name, video)
+    save_video(IUVs_List,out_name)
 
 
 if __name__ == '__main__':

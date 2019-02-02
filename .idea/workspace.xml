@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a38acc0f-2ddd-4d9e-98ee-7ca2ee404428" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/tools/infer_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/infer_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/prep_visualizor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/prep_visualizor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tools/infer_video.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="487">
+              <caret line="279" column="34" lean-forward="true" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="34" />
               <folding>
                 <element signature="e#385#423#0" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectron/utils/vis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2482">
-              <caret line="391" column="40" selection-start-line="391" selection-start-column="40" selection-end-line="391" selection-end-column="40" />
+            <state relative-caret-position="412">
+              <caret line="409" column="69" selection-start-line="409" selection-start-column="44" selection-end-line="409" selection-end-column="69" />
               <folding>
                 <element signature="e#322#360#0" expanded="true" />
               </folding>
@@ -191,23 +190,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/infer_simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1283" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/visualize_results.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detectron/utils/vis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="391" column="40" selection-start-line="391" selection-start-column="40" selection-end-line="391" selection-end-column="40" />
-          <folding>
-            <element signature="e#322#360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/prep_visualizor.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -219,10 +203,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/infer_simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1283" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detectron/utils/vis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="409" column="69" selection-start-line="409" selection-start-column="44" selection-end-line="409" selection-end-column="69" />
+          <folding>
+            <element signature="e#322#360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tools/infer_video.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="487">
+          <caret line="279" column="34" lean-forward="true" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="34" />
           <folding>
             <element signature="e#385#423#0" expanded="true" />
           </folding>
