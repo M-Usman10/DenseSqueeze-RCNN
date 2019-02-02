@@ -115,7 +115,7 @@ def form_IUV_mask(
     return All_Coords
 
 def save_video(images,path,fps=30):
-    fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+    fourcc = cv2.VideoWriter_fourcc("M","P","4","V")
     height,width=images[0].shape[:2]
     out = cv2.VideoWriter(path, fourcc, fps, (width, height))
     for image in images:
