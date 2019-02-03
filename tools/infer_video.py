@@ -115,12 +115,15 @@ def form_IUV_mask(
     return All_Coords
 
 def save_video(images,path,fps=30):
-    fourcc = cv2.VideoWriter_fourcc("M","P","4","V")
-    height,width=images[0].shape[:2]
-    out = cv2.VideoWriter(path, fourcc, fps, (width, height))
+    print ("saving video {} ".format(path))
+    height,width,_=images[0].shape
+
+    video = cv2.VideoWriter(path, 1196444237, fps, (width, height))
+
+
     for image in images:
-        out.write(image)
-    out.release()
+        video.write(image)
+    video.release()
     cv2.destroyAllWindows()
 
 class Cap:
@@ -280,23 +283,19 @@ def main(args):
         # result_name = os.path.basename(args.im_or_folder).split('.')[0] + '{}_IUV.jpg'.format(i)
         out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
 
-        # out_name = os.path.join(
-        #     args.output_dir, result_name)
-        print ("saving image at {}".format(out_name))
-        # IUVs_List.append(IUVs)
 
-        cv2.imwrite(out_name, IUVs)
+        # print ("saving image at {}".format(out_name))
+        IUVs_List.append(IUVs)
+
+        # cv2.imwrite(out_name, IUVs)
 
     #make a video of iuvs and store it
 
     # video =IUVs_List[0]
     #store in the directory
-    # result_name=os.path.basename(args.im_or_folder).split('.')[0]+'_IUV.mp4'
-    # out_name = os.path.join(
-    #     args.output_dir, result_name)
-    # print ("saving video at {} "?.format(out_name))
-    # cv2.imwrite(out_name, video)
-    # save_video(IUVs_List,out_name)
+    out_name = os.path.join(result_dir,'result_IUV.avi')
+
+    save_video(IUVs_List, out_name)
 
 
 if __name__ == '__main__':

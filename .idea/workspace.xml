@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a38acc0f-2ddd-4d9e-98ee-7ca2ee404428" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/infer_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/infer_video.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,12 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tools/infer_video.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="287" column="34" lean-forward="true" selection-start-line="287" selection-start-column="34" selection-end-line="287" selection-end-column="34" />
+            <state relative-caret-position="322">
+              <caret line="297" column="25" selection-start-line="297" selection-start-column="25" selection-end-line="297" selection-end-column="25" />
               <folding>
                 <element signature="e#385#423#0" expanded="true" />
               </folding>
@@ -26,16 +27,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectron/core/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+            <state relative-caret-position="255">
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/prep_visualizor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="286" lean-forward="true" selection-start-line="241" selection-end-line="286" />
+            <state relative-caret-position="4095">
+              <caret line="286" selection-start-line="241" selection-end-line="286" />
               <folding>
                 <element signature="e#322#360#0" expanded="true" />
               </folding>
@@ -54,16 +53,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/infer_simple.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1283" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectron/utils/vis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="248" column="31" lean-forward="true" selection-start-line="247" selection-start-column="4" selection-end-line="248" selection-end-column="31" />
+            <state relative-caret-position="3525">
+              <caret line="248" column="31" selection-start-line="247" selection-start-column="4" selection-end-line="248" selection-end-column="31" />
               <folding>
                 <element signature="e#322#360#0" expanded="true" />
               </folding>
@@ -98,7 +95,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,6 +116,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -148,10 +145,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="25" width="1309" height="743" extended-state="6" />
+    <frame x="57" y="25" width="1303" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2488336" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -171,18 +168,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/detectron/core/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/video_capture.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -193,10 +178,30 @@
     <entry file="file://$PROJECT_DIR$/tools/visualize_results.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/infer_video.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="297" column="25" selection-start-line="297" selection-start-column="25" selection-end-line="297" selection-end-column="25" />
+          <folding>
+            <element signature="e#385#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detectron/core/config.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tools/prep_visualizor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="286" lean-forward="true" selection-start-line="241" selection-end-line="286" />
+        <state relative-caret-position="4095">
+          <caret line="286" selection-start-line="241" selection-end-line="286" />
           <folding>
             <element signature="e#322#360#0" expanded="true" />
           </folding>
@@ -204,26 +209,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/infer_simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1283" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/detectron/utils/vis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="248" column="31" lean-forward="true" selection-start-line="247" selection-start-column="4" selection-end-line="248" selection-end-column="31" />
+        <state relative-caret-position="3525">
+          <caret line="248" column="31" selection-start-line="247" selection-start-column="4" selection-end-line="248" selection-end-column="31" />
           <folding>
             <element signature="e#322#360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/infer_video.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="287" column="34" lean-forward="true" selection-start-line="287" selection-start-column="34" selection-end-line="287" selection-end-column="34" />
-          <folding>
-            <element signature="e#385#423#0" expanded="true" />
           </folding>
         </state>
       </provider>
