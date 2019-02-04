@@ -284,10 +284,11 @@ def main(args):
         out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
 
 
-        # print ("saving image at {}".format(out_name))
+        print ("saving image at {}".format(out_name))
+        cv2.imwrite(out_name, IUVs)
+
         IUVs_List.append(IUVs)
 
-        # cv2.imwrite(out_name, IUVs)
 
     #make a video of iuvs and store it
 
