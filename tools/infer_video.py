@@ -275,9 +275,10 @@ def main(args):
             kp_thresh=2
         )
 
-        # if not IUVs:
-        #     print ("frame missing")
-        #     IUVs=np.zeros((height, width, 3),dtype=np.uint8)
+        if IUVs is None:
+            print ("frame missing")
+            IUVs=np.zeros((height, width, 3),dtype=np.uint8)
+
         if IUVs.shape!=tuple((height,width,3)):
             print ("shape mismatch occured. Shape expected {} Shape received {}".format((height,width,3), IUVs.shape))
             IUVs=np.zeros((height, width, 3),dtype=np.uint8)
