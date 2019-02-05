@@ -23,7 +23,7 @@ import os
 import sys
 import time
 import numpy as np
-
+import pickle
 from caffe2.python import workspace
 
 from detectron.core.config import assert_and_infer_cfg
@@ -114,17 +114,11 @@ def form_IUV_mask(
     All_Coords = All_Coords.astype(np.uint8)
     return All_Coords
 
-def save_video(images,path,fps=30):
-    print ("saving video {} ".format(path))
-    height,width,_=images[0].shape
-
-    video = cv2.VideoWriter(path, 1196444237, fps, (width, height))
-
-
-    for image in images:
-        video.write(image)
-    video.release()
-    cv2.destroyAllWindows()
+def save_iuvs(images,path):
+    print ("saving iuvs {} ".format(path))
+    with open(path, 'wb') as f:
+        pickle.dump(images, f)
+    return
 
 class Cap:
     def __init__(self, path, step_size=1):
@@ -281,22 +275,20 @@ def main(args):
         )
 
         # result_name = os.path.basename(args.im_or_folder).split('.')[0] + '{}_IUV.jpg'.format(i)
-        out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
+        # out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
 
 
-        print ("saving image at {}".format(out_name))
-        cv2.imwrite(out_name, IUVs)
+        # print ("saving image at {}".format(out_name))
+        # cv2.imwrite(out_name, IUVs)
 
         IUVs_List.append(IUVs)
 
 
-    #make a video of iuvs and store it
 
-    # video =IUVs_List[0]
-    #store in the directory
-    out_name = os.path.join(result_dir,'result_IUV.avi')
+    #saving IUVS as a pickle file in the directory
+    out_name = os.path.join(result_dir,'result_IUV.pkl')
 
-    save_video(IUVs_List, out_name)
+    save_iuvs(IUVs_List, out_name)
 
 
 if __name__ == '__main__':
