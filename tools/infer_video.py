@@ -286,7 +286,7 @@ def main(args):
 
 
     #saving IUVS as a pickle file in the directory
-    out_name = os.path.join(result_dir,'result_IUV.pkl')
+    out_name = os.path.join(result_dir,'result_IUV.npy')
 
     save_iuvs(IUVs_List, out_name)
 
