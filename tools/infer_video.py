@@ -116,8 +116,8 @@ def form_IUV_mask(
 
 def save_iuvs(images,path):
     print ("saving iuvs {} ".format(path))
-    with open(path, 'wb') as f:
-        pickle.dump(images, f)
+    iuvs=np.stack(images,axis=0)
+    np.save(path,iuvs)
     return
 
 class Cap:
