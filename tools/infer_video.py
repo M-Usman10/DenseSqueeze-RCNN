@@ -234,7 +234,8 @@ def main(args):
         cap = Cap(args.im_or_folder, args.step_size)
         with cap as cap:
             im_list = cap.read_all()
-        images_read = True
+
+    height, width, layers=im_list[0].shape
 
     for i in range(len(im_list)):
         im_name = im_list[i] if is_dir else args.im_or_folder
@@ -273,6 +274,12 @@ def main(args):
             thresh=0.7,
             kp_thresh=2
         )
+
+        if not IUVs:
+            IUVs=np.zeros((height, width, 3),dtype=np.uint8)
+        if IUVs.shape!=tuple(height,width,3):
+            print ("shape mismatch occured. Shape expected {} Shape received {}".format((height,width,3), IUVs.shape))
+            IUVs=np.zeros((height, width, 3),dtype=np.uint8)
 
         # result_name = os.path.basename(args.im_or_folder).split('.')[0] + '{}_IUV.jpg'.format(i)
         # out_name =os.path.join(result_dir, '{}_IUV.png'.format(i))
