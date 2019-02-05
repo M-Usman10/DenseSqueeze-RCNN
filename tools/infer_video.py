@@ -134,7 +134,7 @@ class Cap:
         success, frame = self.cap.read()
         if not success:
             return success, frame
-        for _ in range(self.step_size):
+        for _ in range(self.step_size-1):
             s, f = self.cap.read()
             if not s:
                 break
@@ -276,6 +276,7 @@ def main(args):
         )
 
         if not IUVs:
+            print ("frame missing")
             IUVs=np.zeros((height, width, 3),dtype=np.uint8)
         if IUVs.shape!=tuple(height,width,3):
             print ("shape mismatch occured. Shape expected {} Shape received {}".format((height,width,3), IUVs.shape))
