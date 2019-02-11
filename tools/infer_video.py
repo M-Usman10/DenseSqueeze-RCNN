@@ -151,7 +151,7 @@ class Cap:
         while not self.video_finished:
             success, frame = self.read()
             if success:
-                frame = (resize(image=frame, output_shape=self.reshape_size) * 255).astype(np.uint8)
+                # frame = (resize(image=frame, output_shape=self.reshape_size) * 255).astype(np.uint8)
                 frames_list.append(frame)
 
         return frames_list
