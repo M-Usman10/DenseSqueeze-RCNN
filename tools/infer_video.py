@@ -35,6 +35,7 @@ from detectron.utils.timer import Timer
 import detectron.core.test_engine as infer_engine
 import detectron.datasets.dummy_datasets as dummy_datasets
 import detectron.utils.c2 as c2_utils
+from skimage.transform import resize
 import detectron.utils.vis as vis_utils
 # from tools.video_capture import Cap
 # from tools.prep_visualizor import form_IUV_mask
@@ -120,11 +121,14 @@ def save_iuvs(images,path):
     np.save(path,iuvs)
     return
 
+
 class Cap:
-    def __init__(self, path, step_size=1):
+    def __init__(self, path, step_size=1, reshape_size=(512, 512)):
         self.path = path
         self.step_size = step_size
         self.curr_frame_no = 0
+        self.video_finished = False
+        self.reshape_size = reshape_size
 
     def __enter__(self):
         self.cap = cv2.VideoCapture(self.path)
@@ -133,32 +137,28 @@ class Cap:
     def read(self):
         success, frame = self.cap.read()
         if not success:
+            self.video_finished = True
             return success, frame
-        for _ in range(self.step_size-1):
+        for _ in range(self.step_size - 1):
             s, f = self.cap.read()
             if not s:
+                self.video_finished = True
                 break
-
         return success, frame
 
     def read_all(self):
         frames_list = []
-        while True:
-            success, frame = self.cap.read()
-            if not success:
-                return frames_list
+        while not self.video_finished:
+            success, frame = self.read()
+            if success:
+                frame = (resize(image=frame, output_shape=self.reshape_size) * 255).astype(np.uint8)
+                frames_list.append(frame)
 
-            frames_list.append(frame)
-
-            for _ in range(self.step_size-1):
-                s, f = self.cap.read()
-                if not s:
-                    return frames_list
+        return frames_list
 
     def __exit__(self, a, b, c):
         self.cap.release()
         cv2.destroyAllWindows()
-
 
 
 def parse_args():
