@@ -31,6 +31,7 @@ LOWEST_BACKBONE_LVL = 2   # E.g., "conv2"-like level
 HIGHEST_BACKBONE_LVL = 5  # E.g., "conv5"-like level
 
 
+
 # ---------------------------------------------------------------------------- #
 # FPN with ResNet
 # ---------------------------------------------------------------------------- #
@@ -104,6 +105,7 @@ def add_fpn_onto_conv_body(
     else:
         # use all levels
         return blobs_fpn, dim_fpn, spatial_scales_fpn
+
 
 
 def add_fpn(model, fpn_level_info):
@@ -557,4 +559,11 @@ def fpn_level_info_ResNet152_conv5():
         blobs=('res5_2_sum', 'res4_35_sum', 'res3_7_sum', 'res2_2_sum'),
         dims=(2048, 1024, 512, 256),
         spatial_scales=(1. / 32., 1. / 16., 1. / 8., 1. / 4.)
+    )
+
+def fpn_level_info_squeeze_net():
+    return FpnLevelInfo(
+        blobs=('fire9_concat', 'fire5/concat', 'fire3/concat', 'relu_conv1'),
+        dims=(512, 256, 128, 64),
+        spatial_scales=(1. / 16., 1. / 8., 1. / 4., 1. / 2.)
     )
