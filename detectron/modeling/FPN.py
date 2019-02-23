@@ -23,6 +23,7 @@ from detectron.utils.net import get_group_gn
 import detectron.modeling.ResNet as ResNet
 import detectron.utils.blob as blob_utils
 import detectron.utils.boxes as box_utils
+import detectron.modeling.SqueezeNet as SqueezeNet
 
 # Lowest and highest pyramid levels in the backbone network. For FPN, we assume
 # that all networks have 5 spatial reductions, each by a factor of 2. Level 1
@@ -80,7 +81,10 @@ def add_fpn_ResNet152_conv5_P2only_body(model):
         P2only=True
     )
 
-
+def add_fpn_squeezenet_body(model):
+    return add_fpn_onto_conv_body(
+        model, SqueezeNet.create_squeezeNet, fpn_level_info_squeeze_net
+    )
 # ---------------------------------------------------------------------------- #
 # Functions for bolting FPN onto a backbone architectures
 # ---------------------------------------------------------------------------- #

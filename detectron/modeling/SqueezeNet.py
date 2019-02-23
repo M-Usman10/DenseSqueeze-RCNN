@@ -36,3 +36,6 @@ class SqueezeNet:
 
     return x
 
+def create_squeezeNet(model):
+  s=SqueezeNet(model,"data");
+  return s.output, 512, 1. / 16.
