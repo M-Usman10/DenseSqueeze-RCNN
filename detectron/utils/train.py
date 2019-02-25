@@ -37,7 +37,7 @@ from detectron.utils import lr_policy
 from detectron.utils.training_stats import TrainingStats
 import detectron.utils.env as envu
 import detectron.utils.net as nu
-
+import pickle
 
 def train_model():
     """Model training loop."""
@@ -119,6 +119,18 @@ def create_model():
                 '========> Resuming from checkpoint {} at start iter {}'.
                 format(weights_file, start_iter)
             )
+
+    if cfg.TRAIN.Load_SqueezeNetWeights:
+
+        logger.info(
+            '========> Loading Weights For SqueezeNet'
+        )
+        pickle_file=cfg.TRAIN.SqueezeNetWeightsFile
+        with open(pickle_file, 'rb') as file:
+            weights = pickle.load(file)
+        for i in weights.keys():
+            workspace.FetchBlob(i)
+            workspace.FeedBlob(i, weights[i])
 
     logger.info('Building model: {}'.format(cfg.MODEL.TYPE))
     model = model_builder.create(cfg.MODEL.TYPE, train=True)

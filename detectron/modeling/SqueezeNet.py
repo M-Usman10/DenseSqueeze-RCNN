@@ -5,12 +5,12 @@ exp3x3 = "expand3x3"
 relu = "relu_"
 
 class SqueezeNet:
-  def __init__(self,model,Data="data",path=''):
+  def __init__(self,model,Data="data"):
     self.data_format=1
     self.model=model
     self.prefix = ""
     self.output=self.create_model(Data)
-    self.load_weights(path)
+
   def fire_module(self,x,inp,fire_id,sq,exp_):
     s_id = 'fire' + str(fire_id) + '/'
     x=brew.conv(self.model, x, s_id + sq1x1,inp, sq, 1)
@@ -38,12 +38,6 @@ class SqueezeNet:
 
     return x
 
-  def load_weights(self, pickle_file):
-    with open(pickle_file, 'rb') as file:
-      weights = pickle.load(file)
-    for i in weights.keys():
-      workspace.FetchBlob(i)
-      workspace.FeedBlob(i, weights[i])
 
 
 def create_squeezeNet(model):

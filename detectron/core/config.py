@@ -65,6 +65,8 @@ __C.TRAIN = AttrDict()
 
 # Initialize network with weights from this .pkl file
 __C.TRAIN.WEIGHTS = b''
+__C.TRAIN.Load_SqueezeNetWeights = False
+__C.TRAIN.SqueezeNetWeightsFile = ""
 
 # Datasets to train on
 # Available dataset list: detectron.datasets.dataset_catalog.datasets()
