@@ -8,7 +8,7 @@ class SqueezeNet:
   def __init__(self,model,Data="data"):
     self.data_format=1
     self.model=model
-    self.prefix = "gpu_0/"
+    self.prefix = ""
     self.output=self.create_model(Data)
 
   def fire_module(self,x,inp,fire_id,sq,exp_):

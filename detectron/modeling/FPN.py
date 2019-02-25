@@ -567,7 +567,7 @@ def fpn_level_info_ResNet152_conv5():
 
 def fpn_level_info_squeeze_net():
     return FpnLevelInfo(
-        blobs=('fire9_concat', 'fire5/concat', 'fire3/concat', 'relu_conv1'),
+        blobs=('fire9/concat', 'fire5/concat', 'fire3/concat', 'relu_conv1'),
         dims=(512, 256, 128, 64),
         spatial_scales=(1. / 16., 1. / 8., 1. / 4., 1. / 2.)
     )
