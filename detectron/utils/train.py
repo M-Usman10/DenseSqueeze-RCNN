@@ -120,22 +120,14 @@ def create_model():
                 format(weights_file, start_iter)
             )
 
-    if cfg.TRAIN.Load_SqueezeNetWeights:
 
-        logger.info(
-            '========> Loading Weights For SqueezeNet'
-        )
-        pickle_file=cfg.TRAIN.SqueezeNetWeightsFile
-        with open(pickle_file, 'rb') as file:
-            weights = pickle.load(file)
-        for i in weights.keys():
-            workspace.FetchBlob(i)
-            workspace.FeedBlob(i, weights[i])
 
     logger.info('Building model: {}'.format(cfg.MODEL.TYPE))
     model = model_builder.create(cfg.MODEL.TYPE, train=True)
     if cfg.MEMONGER:
         optimize_memory(model)
+
+
     # Performs random weight initialization as defined by the model
     workspace.RunNetOnce(model.param_init_net)
     return model, weights_file, start_iter, checkpoints, output_dir
@@ -163,6 +155,19 @@ def setup_model_for_training(model, weights_file, output_dir):
     if weights_file:
         # Override random weight initialization with weights from a saved model
         nu.initialize_gpu_from_weights_file(model, weights_file, gpu_id=0)
+
+    if cfg.TRAIN.Load_SqueezeNetWeights:
+        prefix=""
+        logger.info(
+            '========> Loading Weights For SqueezeNet'
+        )
+        pickle_file=cfg.TRAIN.SqueezeNetWeightsFile
+        with open(pickle_file, 'rb') as file:
+            weights = pickle.load(file)
+        for i in weights.keys():
+            workspace.FetchBlob(i)
+            workspace.FeedBlob(prefix+i, weights[i])
+
     # Even if we're randomly initializing we still need to synchronize
     # parameters across GPUs
     nu.broadcast_parameters(model)
