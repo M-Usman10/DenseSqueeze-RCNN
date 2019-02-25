@@ -60,8 +60,8 @@ BODY_UV_RCNN:
   BODY_UV_IMS: True
 TRAIN:
 #  WEIGHTS: https://dl.fbaipublicfiles.com/detectron/ImageNetPretrained/MSRA/R-50.pkl
-  DATASETS: ('dense_coco_2014_train')
-  PROPOSAL_FILES: ('https://dl.fbaipublicfiles.com/densepose/DensePose-RPN-train_fpn_resnet50.pkl')
+  DATASETS: ('dense_coco_2014_train',)
+  PROPOSAL_FILES: ('https://dl.fbaipublicfiles.com/densepose/DensePose-RPN-train_fpn_resnet50.pkl',)
   SCALES: (640, 672, 704, 736, 768, 800)
   MAX_SIZE: 1333
   IMS_PER_BATCH: 3
