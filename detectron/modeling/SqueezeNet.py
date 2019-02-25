@@ -20,8 +20,9 @@ class SqueezeNet:
     right=brew.conv(self.model, x, s_id + exp3x3,sq, exp_, 3,legacy_pad=2)
     right=brew.relu(self.model,right,s_id + relu + exp3x3)
     return brew.concat(self.model,[left,right],self.prefix+s_id + 'concat',axis=self.data_format),exp_*2
+
   def create_model(self,x):
-    x = brew.conv(self.model, x, self.prefix+'conv1',3, 64, 3,stride=2, legacy_pad=2)
+    x = brew.conv(self.model, x, self.prefix+'conv1',3, 64, 3,stride=2,pad=1)
     x = brew.relu(self.model, x,self.prefix+'relu_conv1')
     x = brew.max_pool(self.model, x, self.prefix+'pool1', kernel=3, stride=2)
     x,inp = self.fire_module(x, fire_id=2, sq=16, exp_=64,inp=64)
