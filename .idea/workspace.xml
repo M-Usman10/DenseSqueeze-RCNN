@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a38acc0f-2ddd-4d9e-98ee-7ca2ee404428" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/DensePose_Squeezenet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/DensePose_Squeezenet.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/detectron/modeling/SqueezeNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectron/modeling/SqueezeNet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/detectron/modeling/SqueezeNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+            <state relative-caret-position="165">
+              <caret line="32" column="82" selection-start-line="32" selection-start-column="82" selection-end-line="32" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -26,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectron/modeling/detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
-              <caret line="411" column="17" selection-start-line="411" selection-start-column="17" selection-end-line="411" selection-end-column="17" />
+            <state relative-caret-position="-104">
+              <caret line="375" column="8" selection-start-line="375" selection-start-column="8" selection-end-line="375" selection-end-column="8" />
               <folding>
                 <element signature="e#358#396#0" expanded="true" />
               </folding>
@@ -98,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectron/modeling/ResNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
+            <state relative-caret-position="21">
+              <caret line="296" column="20" selection-start-line="296" selection-start-column="20" selection-end-line="296" selection-end-column="20" />
               <folding>
                 <element signature="e#389#427#0" expanded="true" />
               </folding>
@@ -226,6 +225,21 @@
       <option name="presentableId" value="Default" />
       <updated>1549091120444</updated>
     </task>
+    <task id="LOCAL-00001" summary="setting padding">
+      <created>1551081913778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551081913778</updated>
+    </task>
+    <task id="LOCAL-00002" summary="setting padding">
+      <created>1551082451979</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551082451979</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -250,6 +264,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="setting padding" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting padding" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tools/video_capture.py">
@@ -357,13 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/DensePose_ResNet50_FPN.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detectron/utils/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -398,26 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detectron/modeling/detector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="411" column="17" selection-start-line="411" selection-start-column="17" selection-end-line="411" selection-end-column="17" />
-          <folding>
-            <element signature="e#358#396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detectron/modeling/ResNet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
-          <folding>
-            <element signature="e#389#427#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/configs/DensePose_Squeezenet.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -425,10 +416,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/detectron/modeling/ResNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="296" column="20" selection-start-line="296" selection-start-column="20" selection-end-line="296" selection-end-column="20" />
+          <folding>
+            <element signature="e#389#427#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detectron/modeling/detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="375" column="8" selection-start-line="375" selection-start-column="8" selection-end-line="375" selection-end-column="8" />
+          <folding>
+            <element signature="e#358#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/DensePose_ResNet50_FPN.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/detectron/modeling/SqueezeNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+        <state relative-caret-position="165">
+          <caret line="32" column="82" selection-start-line="32" selection-start-column="82" selection-end-line="32" selection-end-column="82" />
         </state>
       </provider>
     </entry>
