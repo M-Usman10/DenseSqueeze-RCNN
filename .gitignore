@@ -36,6 +36,5 @@ configs_old/*
 
 
 .nfs*
-
-
+.idea/
 DensePoseData/
