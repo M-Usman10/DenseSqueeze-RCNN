@@ -37,6 +37,7 @@ from detectron.utils import lr_policy
 from detectron.utils.training_stats import TrainingStats
 import detectron.utils.env as envu
 import detectron.utils.net as nu
+import detectron.utils.c2 as c2_utils
 import pickle
 
 def train_model():
@@ -173,9 +174,10 @@ def setup_model_for_training(model, weights_file, output_dir):
         with open(pickle_file, 'rb') as file:
             weights = pickle.load(file)
 
+        dev = c2_utils.CudaDevice(0)
         for i in weights.keys():
             # workspace.FetchBlob(prefix+i)
-            workspace.FeedBlob(prefix+i, weights[i])
+            workspace.FeedBlob(prefix+i, weights[i],device_option=dev)
 
     # Even if we're randomly initializing we still need to synchronize
     # parameters across GPUs
