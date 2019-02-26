@@ -55,8 +55,8 @@ def train_model():
         training_stats.IterTic()
         lr = model.UpdateWorkspaceLr(cur_iter, lr_policy.get_lr_at_iter(cur_iter))
         workspace.RunNet(model.net.Proto().name)
-        # np.save('DensePoseData/image.npy', workspace.FetchBlob('gpu_0/data'))
-        np.save('DensePoseData/output.npy',workspace.FetchBlob('conv1'))
+        np.save('DensePoseData/image.npy', workspace.FetchBlob('gpu_0/data'))
+        # np.save('DensePoseData/output.npy',workspace.FetchBlob('conv1'))
         np.save('DensePoseData/outputgpu.npy',workspace.FetchBlob('gpu_0/conv1'))
 
         if cur_iter == start_iter:
