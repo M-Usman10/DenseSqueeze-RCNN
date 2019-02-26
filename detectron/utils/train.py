@@ -165,7 +165,7 @@ def setup_model_for_training(model, weights_file, output_dir):
 
     # print (cfg.TRAIN.SqueezeNetWeightsFile)
     if cfg.TRAIN.Load_SqueezeNetWeights:
-        prefix=""
+        prefix="gpu_0/"
         logger.info(
             '\n\n\n\n========> Loading Weights For SqueezeNet<======================\n\n\n\n'
         )
