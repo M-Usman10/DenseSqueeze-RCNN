@@ -160,10 +160,14 @@ def setup_model_for_training(model, weights_file, output_dir):
         # Override random weight initialization with weights from a saved model
         nu.initialize_gpu_from_weights_file(model, weights_file, gpu_id=0)
 
+    logger.info ("{}".format(cfg.TRAIN.Load_SqueezeNetWeights))
+    logger.info ("{}".format(cfg.TRAIN.Load_SqueezeNetWeightsFile))
+
+    # print (cfg.TRAIN.SqueezeNetWeightsFile)
     if cfg.TRAIN.Load_SqueezeNetWeights:
         prefix=""
         logger.info(
-            '========> Loading Weights For SqueezeNet'
+            '\n\n\n\n========> Loading Weights For SqueezeNet<======================\n\n\n\n'
         )
         pickle_file=cfg.TRAIN.SqueezeNetWeightsFile
         with open(pickle_file, 'rb') as file:
