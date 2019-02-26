@@ -161,7 +161,7 @@ def setup_model_for_training(model, weights_file, output_dir):
         nu.initialize_gpu_from_weights_file(model, weights_file, gpu_id=0)
 
     logger.info ("{}".format(cfg.TRAIN.Load_SqueezeNetWeights))
-    logger.info ("{}".format(cfg.TRAIN.Load_SqueezeNetWeightsFile))
+    logger.info ("{}".format(cfg.TRAIN.SqueezeNetWeightsFile))
 
     # print (cfg.TRAIN.SqueezeNetWeightsFile)
     if cfg.TRAIN.Load_SqueezeNetWeights:
