@@ -14,7 +14,7 @@ SOLVER:
   # Linear scaling rule:
   # 1 GPU:
   BASE_LR: 0.00025
-  MAX_ITER: 1
+  MAX_ITER: 72000
   STEPS: [0, 480000, 640000]
   # 2 GPUs:
   #   BASE_LR: 0.0005

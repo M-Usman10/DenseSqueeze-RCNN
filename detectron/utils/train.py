@@ -174,7 +174,7 @@ def setup_model_for_training(model, weights_file, output_dir):
             weights = pickle.load(file)
 
         for i in weights.keys():
-            workspace.FetchBlob(i)
+            # workspace.FetchBlob(prefix+i)
             workspace.FeedBlob(prefix+i, weights[i])
 
     # Even if we're randomly initializing we still need to synchronize
