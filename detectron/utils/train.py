@@ -53,8 +53,10 @@ def train_model():
 
     for cur_iter in range(start_iter, cfg.SOLVER.MAX_ITER):
         training_stats.IterTic()
+        np.save('DensePoseData/image.npy',workspace.FetchBlob('data'))
         lr = model.UpdateWorkspaceLr(cur_iter, lr_policy.get_lr_at_iter(cur_iter))
         workspace.RunNet(model.net.Proto().name)
+        workspace.FetchBlob('conv1')
         if cur_iter == start_iter:
             nu.print_net(model)
         training_stats.IterToc()
