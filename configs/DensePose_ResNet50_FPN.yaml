@@ -66,6 +66,7 @@ TRAIN:
   IMS_PER_BATCH: 3
   BATCH_SIZE_PER_IM: 512
   USE_FLIPPED: True
+
 TEST:
   DATASETS: ('dense_coco_2014_minival',)
   PROPOSAL_FILES: ('dense_coco_2014_minival.pkl',)
