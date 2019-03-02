@@ -1,19 +1,25 @@
-import os
-print(os.getcwd())
-import sys
-import logging
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
+
+import cv2  # NOQA (Must import before importing caffe2 due to bug in cv2)
+
+
 from detectron.core.config import assert_and_infer_cfg
 from detectron.core.config import cfg
 from detectron.core.config import merge_cfg_from_file
 from detectron.utils.io import cache_url
 from detectron.utils.logging import setup_logging
+from detectron.utils.timer import Timer
+from detectron.core.construct_test_model import DensePoseModel
+
 from detectron.core.test_texture import *
 from detectron.core.test_tools import *
 from flask import url_for, send_from_directory, request
 from werkzeug import secure_filename
-import cv2
 from caffe2.python import workspace
-from detectron.core.construct_test_model import DensePoseModel
 cv2.ocl.setUseOpenCL(False)
 
 

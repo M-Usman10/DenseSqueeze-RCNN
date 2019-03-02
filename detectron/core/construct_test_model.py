@@ -10,10 +10,7 @@ from collections import defaultdict
 import logging
 import time
 import numpy as np
-from detectron.core.config import assert_and_infer_cfg
-from detectron.core.config import cfg
-from detectron.core.config import merge_cfg_from_file
-from detectron.utils.io import cache_url
+
 from detectron.utils.timer import Timer
 import detectron.core.test_engine as infer_engine
 import detectron.datasets.dummy_datasets as dummy_datasets
@@ -55,10 +52,7 @@ class DensePoseModel:
 
     def construct_model(self,weights):
         logger = logging.getLogger(__name__)
-        merge_cfg_from_file(cfg)
-        cfg.NUM_GPUS = 1
-        weights = cache_url(weights, cfg.DOWNLOAD_CACHE)
-        assert_and_infer_cfg(cache_urls=False)
+
         self.model = infer_engine.initialize_model_from_cfg(weights)
         self.dummy_coco_dataset = dummy_datasets.get_coco_dataset()
         logger.info("Model created\n\n\n")
