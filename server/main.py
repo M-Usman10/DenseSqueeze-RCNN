@@ -7,14 +7,14 @@ from detectron.core.config import cfg
 from detectron.core.config import merge_cfg_from_file
 from detectron.utils.io import cache_url
 from detectron.utils.logging import setup_logging
-# from servertools.utils.texture import *
-# from servertools.utils.tools import *
+from detectron.core.test_texture import *
+from detectron.core.test_tools import *
 from flask import url_for, send_from_directory, request
 from werkzeug import secure_filename
 import cv2
 cv2.ocl.setUseOpenCL(False)
 from caffe2.python import workspace
-from servertools.construct_model import DensePoseModel
+from detectron.core.construct_test_model import DensePoseModel
 
 
 
