@@ -59,8 +59,8 @@ BODY_UV_RCNN:
   ##
   BODY_UV_IMS: True
 TRAIN:
-#  WEIGHTS: https://dl.fbaipublicfiles.com/detectron/ImageNetPretrained/MSRA/R-50.pkl
-  Load_SqueezeNetWeights: True
+  WEIGHTS: "DensePoseData/model_iter_72000.pkl"
+  Load_SqueezeNetWeights: False
   SqueezeNetWeightsFile: "weights/squeeze.pkl"
   DATASETS: ('dense_coco_2014_train','dense_coco_2014_valminusminival')
   PROPOSAL_FILES: ('DensePoseData/proposals/train_fpn_resnet50.pkl','DensePoseData/proposals/valminusminival_fpn_resnet50.pkl')
