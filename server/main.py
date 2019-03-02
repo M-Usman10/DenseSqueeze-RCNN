@@ -12,9 +12,9 @@ from detectron.core.test_tools import *
 from flask import url_for, send_from_directory, request
 from werkzeug import secure_filename
 import cv2
-cv2.ocl.setUseOpenCL(False)
 from caffe2.python import workspace
 from detectron.core.construct_test_model import DensePoseModel
+cv2.ocl.setUseOpenCL(False)
 
 
 
