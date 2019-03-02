@@ -1,4 +1,4 @@
-texture_img: Texture_Data/haider.jpg
+texture_img: server/Texture_Data/haider.jpg
 grid_pixels: 200
 uv_dim: 199.0
 input_dir:  /home/arslanfarooq98/inference_dir/input_imgs
