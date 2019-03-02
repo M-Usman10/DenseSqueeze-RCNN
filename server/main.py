@@ -1,4 +1,5 @@
 import os
+print(os.getcwd())
 import sys
 import logging
 from detectron.core.config import assert_and_infer_cfg
