@@ -23,6 +23,9 @@ from caffe2.python import workspace
 cv2.ocl.setUseOpenCL(False)
 
 
+config = load_config(r'server/configs.yaml')
+map_t = Texture(config)
+app = make_flask_app(config)
 
 def process_video(saved_path,video_name,flag=0):
 
@@ -87,9 +90,9 @@ def index_fn():
 
 
 if __name__ == '__main__':
-    config = load_config(r'server/configs.yaml')
-    map_t = Texture(config)
-    app = make_flask_app(config)
+    # config = load_config(r'server/configs.yaml')
+    # map_t = Texture(config)
+    # app = make_flask_app(config)
 
     workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
     setup_logging(__name__)
