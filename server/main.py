@@ -20,7 +20,7 @@ from server.construct_model import DensePoseModel
 def process_video(saved_path,video_name,flag=0):
 
 
-    with Cap(saved_path,step_size=0) as cap:
+    with Cap(saved_path,step_size=1) as cap:
         images = cap.read_all()
 
     iuvs=dpmodel.predict_iuvs(images)

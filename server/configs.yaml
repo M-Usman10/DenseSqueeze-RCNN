@@ -8,5 +8,5 @@ tool_dir: /home/arslanfarooq98/modified_code/DensePose/tools
 send_from: Output_Data
 width: 1080
 height: 720
-weights: DensePoseData/weights/resnet50_weights.pkl
+weights: DensePoseData/weights/resnet101/weights.pkl
 model_config_file: configs/DensePose_ResNet101_FPN_s1x-e2e.yaml
