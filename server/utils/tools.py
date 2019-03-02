@@ -2,7 +2,6 @@ import yaml
 from flask import Flask
 import logging, os
 import cv2
-from skimage.transform import resize
 
 def iuv_files_sort(name):
     return int(name[:-8])

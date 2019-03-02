@@ -1,6 +1,10 @@
 import os
 import sys
 import logging
+from detectron.core.config import assert_and_infer_cfg
+from detectron.core.config import cfg
+from detectron.core.config import merge_cfg_from_file
+from detectron.utils.io import cache_url
 from detectron.utils.logging import setup_logging
 from server.utils.texture import *
 from server.utils.tools import *
@@ -72,13 +76,26 @@ def transfer_texture():
 def index_fn():
     return "hello world"
 
+
+
+
 if __name__ == '__main__':
+    config = load_config(r'server/configs.yaml')
+    map_t = Texture(config)
+    app = make_flask_app(config)
+
     workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
     setup_logging(__name__)
 
-    config= load_config(r'server/configs.yaml')
-    map_t = Texture(config)
-    app = make_flask_app(config)
-    dpmodel=DensePoseModel()
+    logger = logging.getLogger(__name__)
+    merge_cfg_from_file(app.config['model_config_file'])
+    cfg.NUM_GPUS = 1
+
+    weights = cache_url(app.config['weights'], cfg.DOWNLOAD_CACHE)
+    assert_and_infer_cfg(cache_urls=False)
+
+
+
+    dpmodel=DensePoseModel(weights)
 
     app.run(host='0.0.0.0',port=9090, debug=False)
