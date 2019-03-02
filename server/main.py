@@ -7,8 +7,8 @@ from detectron.core.config import cfg
 from detectron.core.config import merge_cfg_from_file
 from detectron.utils.io import cache_url
 from detectron.utils.logging import setup_logging
-from servertools.utils.texture import *
-from servertools.utils.tools import *
+# from servertools.utils.texture import *
+# from servertools.utils.tools import *
 from flask import url_for, send_from_directory, request
 from werkzeug import secure_filename
 import cv2
