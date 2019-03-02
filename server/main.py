@@ -98,10 +98,10 @@ if __name__ == '__main__':
     setup_logging(__name__)
 
     logger = logging.getLogger(__name__)
-    merge_cfg_from_file(app.config['model_config_file'])
+    merge_cfg_from_file(config['model_config_file'])
     cfg.NUM_GPUS = 1
 
-    weights = cache_url(app.config['weights'], cfg.DOWNLOAD_CACHE)
+    weights = cache_url(config['weights'], cfg.DOWNLOAD_CACHE)
     assert_and_infer_cfg(cache_urls=False)
 
 
