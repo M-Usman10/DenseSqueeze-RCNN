@@ -13,9 +13,9 @@ SOLVER:
   WARM_UP_FACTOR: 0.1
   # Linear scaling rule:
   # 1 GPU:
-  BASE_LR: 0.00025
-  MAX_ITER: 72000
-  STEPS: [0, 480000, 640000]
+  BASE_LR: 0.0005
+  MAX_ITER: 140000
+  STEPS: [0, 100000, 120000]
   # 2 GPUs:
   #   BASE_LR: 0.0005
   #   MAX_ITER: 360000
@@ -59,7 +59,7 @@ BODY_UV_RCNN:
   ##
   BODY_UV_IMS: True
 TRAIN:
-  WEIGHTS: "DensePoseData/model_iter_72000.pkl"
+#  WEIGHTS: "DensePoseData/model_iter_72000.pkl"
   Load_SqueezeNetWeights: False
   SqueezeNetWeightsFile: "weights/squeeze.pkl"
   DATASETS: ('dense_coco_2014_train','dense_coco_2014_valminusminival')
