@@ -60,7 +60,7 @@ BODY_UV_RCNN:
   ##
   BODY_UV_IMS: True
 TRAIN:
-  WEIGHTS: "DensePoseData/weights/squeezenet/model_iter_72000.pkl"
+  WEIGHTS: "DensePoseData/weights/squeezenetweights72000.pkl"
   Load_SqueezeNetWeights: False
   SqueezeNetWeightsFile: "weights/squeeze.pkl"
   DATASETS: ('dense_coco_2014_train','dense_coco_2014_valminusminival')
