@@ -89,8 +89,11 @@ def retreive_texture():
 def transfer_texture():
     print("request for texture transfer received")
     app.logger.info(app.config['UPLOAD_FOLDER'])
+    print ("reading video")
     video = request.files['transfer']
     name = request.form['texture_filename']
+
+
     map_t.texture_path = os.path.join(app.config['UPLOAD_FOLDER'], name + '.jpg')
     print ("reading texture")
     map_t.read_texture()
