@@ -91,7 +91,10 @@ def transfer_texture():
     name = request.form['texture_filename']
 
 
-    map_t.texture_path = os.path.join(app.config['UPLOAD_FOLDER'], name + '.jpg')
+    texture_path= os.path.join(app.config['UPLOAD_FOLDER'], name + '.jpg')
+    if not os.path.isfile(texture_path):
+        texture_path = os.path.join(config['textures_alternate_path'], name + '.jpg')
+    map_t.texture_path=texture_path
     print ("reading texture")
     map_t.read_texture()
     print ("finished reading texture")
