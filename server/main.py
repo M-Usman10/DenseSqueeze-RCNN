@@ -61,8 +61,12 @@ def process_video(saved_path,result_filename='',flag=0):
 def retreive_texture():
     print("request for texture retreival received")
     app.logger.info(app.config['UPLOAD_FOLDER'])
+    print ("1")
     create_new_folder(app.config['UPLOAD_FOLDER'])
+
     img1 = request.files['img1']
+    print ("1")
+
     img2 = request.files['img2']
     img3 = request.files['img3']
     img4 = request.files['img4']
@@ -88,7 +92,9 @@ def transfer_texture():
     video = request.files['transfer']
     name = request.form['texture_filename']
     map_t.texture_path = os.path.join(app.config['UPLOAD_FOLDER'], name + '.jpg')
+    print ("reading texture")
     map_t.read_texture()
+    print ("read texture")
     video_name = secure_filename(video.filename)
     print("Video/image to process is {}".format(video_name))
     create_new_folder(app.config['UPLOAD_FOLDER'])
