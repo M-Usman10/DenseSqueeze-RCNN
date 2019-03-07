@@ -12,6 +12,14 @@ def read_images_sorted(path,key):
         images.append(cv2.imread(os.path.join(path,i)))
     return images
 
+def images_to_video(filenames, videopath):
+    """filenames are the full paths of images"""
+    if len(filenames) == 0:
+        return
+    images = []
+    for i in filenames:
+        images.append(cv2.imread(i))
+    save_video(images, videopath)
 
 class Cap:
     def __init__(self, path, step_size=1, reshape_size=(512, 512)):
