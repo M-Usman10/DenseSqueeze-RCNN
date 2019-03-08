@@ -109,7 +109,7 @@ class DensePoseModel:
         t = time.time()
 
         height, width, layers = imlist[0].shape
-        for im in imlist:
+        for count,im in enumerate(imlist):
             with c2_utils.NamedCudaScope(0):
                 cls_boxes, cls_segms, cls_keyps, cls_bodys = infer_engine.im_detect_all(
                     self.model, im, None, timers=timers
@@ -130,7 +130,10 @@ class DensePoseModel:
             )
             if IUVs is None:
                 print("frame missing")
-                IUVs = np.zeros((height, width, 3), dtype=np.uint8)
+                if count != 0:
+                    IUVs = IUVs_List[-1]
+                else:
+                    IUVs = np.zeros((height, width, 3), dtype=np.uint8)
 
             if IUVs.shape != tuple((height, width, 3)):
                 print("shape mismatch occured. Shape expected {} Shape received {}".format((height, width, 3),
