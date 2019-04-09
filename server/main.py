@@ -28,7 +28,13 @@ map_t = Texture(config)
 app = make_flask_app(config)
 
 def process_video(saved_path,result_filename='',flag=0):
+    """
 
+    :param saved_path: path for image to be processed
+    :param result_filename: Path of output directory
+    :param flag: 0 for texture retreival, 1 for texture transfer, 2 for boundary drawing
+    :return: path of output object in case of flag=0 or 1 and iuvs in case of flag=2
+    """
     with Cap(saved_path, step_size=0) as cap:
         images = cap.read_all()
 
@@ -47,12 +53,13 @@ def process_video(saved_path,result_filename='',flag=0):
             cv2.imwrite(result_save_file, out[0])
         return result_filename
 
-    else:
+    elif flag==1:
         result_filename = result_filename + '.jpg'
         result_save_file = os.path.join(app.config['UPLOAD_FOLDER'], result_filename)
         map_t.extract_texture_from_video(images, iuvs, result_save_file)
         return result_filename
-
+    elif flag==2:
+        return iuvs[0]
 
 
 
@@ -80,7 +87,18 @@ def retreive_texture():
     filename = process_video(app.config['UPLOAD_FOLDER'] + '/video.mp4', result_filename=name, flag=1)
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
-
+@app.route('/transfer_texture', methods = ['POST'])
+def draw_boundary():
+    print ('request recieved for boundary extraction')
+    image = request.files['image']
+    coord = request.form['coord']
+    image.save('img.jpg')
+    image= cv2.imread('img.jpg')
+    iuv=process_video('img.jpg',)
+    coord=coord.split(',')
+    coord=(int(coord[0]),int(coord[1]))
+    cv2.imwrite(os.path.join(app.config['UPLOAD_FOLDER'],'img.jpg'),dotted_boundary(image,iuv,coord))
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'img.jpg', as_attachment=True)
 
 @app.route('/transfer_texture', methods = ['POST'])
 def transfer_texture():

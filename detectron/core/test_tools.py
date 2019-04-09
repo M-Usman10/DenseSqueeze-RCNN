@@ -2,10 +2,26 @@ import yaml
 from flask import Flask
 import logging, os
 import cv2
+import numpy as np
+from skimage.filters import sobel
 
 def iuv_files_sort(name):
     return int(name[:-8])
 
+def dotted_boundary(image,iuv,coord):
+    """
+
+    :param image: Image sent by user
+    :param iuv: IUV image
+    :param coord: tuple (x,y)
+    :return: image with dotted boundary on body part
+    """
+    color= np.array([60, 20, 220])
+    i_img=iuv[...,0]
+    part_idx=i_img[coord[0],coord[1]]
+    i_img[i_img!=part_idx]=0
+    edge_img=sobel(i_img)
+    image[edge_img!=0]=color
 
 def read_images_sorted(path,key):
     files=sorted(os.listdir(path),key=key)
