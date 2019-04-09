@@ -87,7 +87,7 @@ def retreive_texture():
     filename = process_video(app.config['UPLOAD_FOLDER'] + '/video.mp4', result_filename=name, flag=1)
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
-@app.route('/transfer_texture', methods = ['POST'])
+@app.route('/draw_boundary', methods = ['POST'])
 def draw_boundary():
     print ('request recieved for boundary extraction')
     image = request.files['image']
